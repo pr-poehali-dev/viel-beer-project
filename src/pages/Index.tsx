@@ -215,7 +215,7 @@ export default function Index() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up opacity-0 delay-500" style={{ animationFillMode: "forwards" }}>
               <a href="#contacts" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded viel-btn text-base">
-                Стать партнёром
+                Наши контакты
                 <Icon name="ArrowRight" size={18} />
               </a>
               <a href="#range" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded text-base transition-all"
