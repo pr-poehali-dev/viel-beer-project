@@ -132,7 +132,9 @@ export default function Index() {
         style={{ background: "rgba(10,10,10,0.85)", backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(212,160,23,0.15)" }}
       >
         <div className="flex items-center gap-2">
-          <span className="font-bebas text-3xl tracking-widest gold-shimmer" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>VIEL</span>
+          <span className="font-bebas text-3xl tracking-widest" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+            <span style={{ color: "#F5C842" }}>VI</span><span style={{ color: "#FFFFFF" }}>EL</span>
+          </span>
           <span className="text-xs tracking-[0.3em] uppercase" style={{ color: "var(--viel-muted)", fontFamily: "'Oswald', sans-serif", marginTop: "2px" }}>Beer</span>
         </div>
         <div className="hidden md:flex items-center gap-8">
@@ -201,7 +203,7 @@ export default function Index() {
             </div>
             <h1 className="text-8xl md:text-[10rem] leading-none mb-4 animate-fade-in-up opacity-0 delay-200"
               style={{ fontFamily: "'Bebas Neue', sans-serif", animationFillMode: "forwards" }}>
-              <span className="gold-shimmer">VIEL</span>
+              <span style={{ color: "#F5C842" }}>VI</span><span style={{ color: "#FFFFFF" }}>EL</span>
             </h1>
             <p className="text-xl md:text-2xl mb-4 animate-fade-in-up opacity-0 delay-300"
               style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 300, letterSpacing: "0.1em", animationFillMode: "forwards", color: "rgba(240,234,214,0.85)" }}>
@@ -528,7 +530,9 @@ export default function Index() {
       <footer className="py-8 px-6 md:px-12" style={{ borderTop: "1px solid rgba(212,160,23,0.15)", background: "rgba(0,0,0,0.3)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-widest gold-shimmer" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>VIEL</span>
+            <span className="text-2xl font-bold tracking-widest" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+            <span style={{ color: "#F5C842" }}>VI</span><span style={{ color: "#FFFFFF" }}>EL</span>
+          </span>
             <span className="text-xs" style={{ color: "var(--viel-muted)", fontFamily: "'Oswald', sans-serif" }}>BEER</span>
           </div>
           <p className="text-xs text-center" style={{ color: "var(--viel-muted)" }}>
