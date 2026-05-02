@@ -211,7 +211,7 @@ export default function Index() {
             </p>
             <p className="text-base mb-10 animate-fade-in-up opacity-0 delay-400 leading-relaxed"
               style={{ color: "var(--viel-muted)", animationFillMode: "forwards" }}>
-              500 лет китайского пивоварения в современной бутылке. Для баров, ресторанов и торговых сетей, которые ищут яркий продукт с высокой маржой.
+              Лёгкость и азиатский характер — это китайское пиво для тех, кто ищет новый вкус без лишней сложности. Мы работаем с Дальним Востоком и предлагаем продукт, который легко встроить в продажи, меню и витрину.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up opacity-0 delay-500" style={{ animationFillMode: "forwards" }}>
               <a href="#contacts" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded viel-btn text-base">
