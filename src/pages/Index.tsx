@@ -155,7 +155,7 @@ export default function Index() {
           href="#contacts"
           className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-sm rounded viel-btn"
         >
-          Стать партнёром
+          Наши контакты
         </a>
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} style={{ color: "var(--viel-gold)" }}>
           <Icon name={menuOpen ? "X" : "Menu"} size={24} />
@@ -177,7 +177,7 @@ export default function Index() {
             </a>
           ))}
           <a href="#contacts" className="mt-4 px-8 py-3 rounded viel-btn text-base" onClick={() => setMenuOpen(false)}>
-            Стать партнёром
+            Наши контакты
           </a>
         </div>
       )}
@@ -465,7 +465,9 @@ export default function Index() {
           <div className="mx-auto mb-6" style={{ width: "60px", height: "3px", background: "linear-gradient(90deg, transparent, var(--viel-gold), transparent)" }} />
           <span className="text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: "var(--viel-gold)", fontFamily: "'Oswald', sans-serif" }}>Сотрудничество</span>
           <h2 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}>
-            СТАНЬТЕ<br /><span className="gold-shimmer">ПАРТНЁРОМ</span>
+            <span style={{ color: "#F5C842" }}>VI</span><span style={{ color: "#FFFFFF" }}>EL</span> —{" "}
+            <span style={{ display: "inline-block" }}>партнер, которого</span><br />
+            <span style={{ display: "inline-block" }}>легко запомнить.</span>
           </h2>
           <p className="text-base mb-12 max-w-xl mx-auto leading-relaxed" style={{ color: "rgba(240,234,214,0.7)" }}>
             Мы ищем дистрибьюторов, рестораны, бары и розничные сети по всей России. Свяжитесь с нами — ответим в течение 2 часов.
