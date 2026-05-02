@@ -474,9 +474,9 @@ export default function Index() {
 
           <div className="grid md:grid-cols-3 gap-4 mb-12">
             {[
-              { icon: "Phone", label: "Телефон", value: "+7 (495) 000-00-00" },
-              { icon: "Mail", label: "Email", value: "partner@viel-beer.ru" },
-              { icon: "MapPin", label: "Офис", value: "Москва, Красная Пресня" },
+              { icon: "Phone", label: "Телефон", value: "+7-908-442-32-17" },
+              { icon: "Mail", label: "Email", value: "vielvl.dd@gmail.com" },
+              { icon: "MapPin", label: "Склад", value: "Владивосток, Адм. Макарова 41" },
             ].map((c) => (
               <div
                 key={c.label}
