@@ -229,14 +229,15 @@ export default function Index() {
           </div>
 
           <div className="flex-1 flex justify-center animate-scale-in opacity-0 delay-300" style={{ animationFillMode: "forwards" }}>
-            <div className="relative animate-float">
+            <div className="relative animate-float w-full max-w-xl">
               <div className="absolute inset-0 rounded-2xl blur-2xl opacity-30" style={{ background: "radial-gradient(circle, var(--viel-gold) 0%, transparent 70%)" }} />
-              <img
-                src={BOTTLE_IMG}
-                alt="VIEL пиво"
-                className="relative z-10 w-72 md:w-96 h-72 md:h-96 object-cover rounded-2xl"
-                style={{ border: "1px solid rgba(212,160,23,0.2)" }}
-              />
+              <div className="relative z-10 w-full rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9", border: "1px solid rgba(212,160,23,0.2)" }}>
+                <img
+                  src={BOTTLE_IMG}
+                  alt="VIEL пиво"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
