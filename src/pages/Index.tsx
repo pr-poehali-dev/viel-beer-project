@@ -274,7 +274,7 @@ export default function Index() {
                 Наша цель — открыть для российского рынка новые вкусы и высокое качество, которое может предложить современная азиатская пивоваренная культура.
               </p>
               <div className="flex gap-12">
-                {[["18", "стран экспорта"], ["500", "лет традиций"], ["4", "сорта"]].map(([num, label]) => (
+                {[["3", "города для доставки"], ["8", "марок пива"], ["1", "склад во Владивостоке"]].map(([num, label]) => (
                   <div key={label}>
                     <div className="text-4xl font-bold mb-1" style={{ fontFamily: "'Bebas Neue', sans-serif", color: "var(--viel-gold)" }}>{num}</div>
                     <div className="text-xs tracking-widest uppercase" style={{ color: "var(--viel-muted)", fontFamily: "'Oswald', sans-serif" }}>{label}</div>
