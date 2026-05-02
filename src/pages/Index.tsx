@@ -198,7 +198,7 @@ export default function Index() {
             <div className="animate-fade-in-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
               <span className="inline-block text-xs tracking-[0.4em] uppercase px-3 py-1 rounded-full mb-6"
                 style={{ border: "1px solid rgba(212,160,23,0.4)", color: "var(--viel-gold)", fontFamily: "'Oswald', sans-serif" }}>
-                Китайское пиво нового поколения
+                Китайское пиво для Дальнего Востока
               </span>
             </div>
             <h1 className="text-8xl md:text-[10rem] leading-none mb-4 animate-fade-in-up opacity-0 delay-200"
