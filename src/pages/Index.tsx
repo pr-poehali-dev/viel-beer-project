@@ -176,9 +176,7 @@ export default function Index() {
               {l.label}
             </a>
           ))}
-          <a href="#contacts" className="mt-4 px-8 py-3 rounded viel-btn text-base" onClick={() => setMenuOpen(false)}>
-            Наши контакты
-          </a>
+
         </div>
       )}
 
