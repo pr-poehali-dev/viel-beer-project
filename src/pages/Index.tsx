@@ -492,38 +492,6 @@ export default function Index() {
             ))}
           </div>
 
-          <div className="p-8 rounded-2xl text-left max-w-xl mx-auto" style={{ background: "rgba(212,160,23,0.06)", border: "1px solid rgba(212,160,23,0.3)" }}>
-            <h3 className="text-xl font-bold mb-6 text-center" style={{ fontFamily: "'Oswald', sans-serif", letterSpacing: "0.05em" }}>Оставить заявку</h3>
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Ваше имя"
-                className="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(212,160,23,0.25)", color: "var(--viel-text)", fontFamily: "'IBM Plex Sans', sans-serif" }}
-                onFocus={e => (e.target.style.borderColor = "var(--viel-gold)")}
-                onBlur={e => (e.target.style.borderColor = "rgba(212,160,23,0.25)")}
-              />
-              <input
-                type="text"
-                placeholder="Компания / заведение"
-                className="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(212,160,23,0.25)", color: "var(--viel-text)", fontFamily: "'IBM Plex Sans', sans-serif" }}
-                onFocus={e => (e.target.style.borderColor = "var(--viel-gold)")}
-                onBlur={e => (e.target.style.borderColor = "rgba(212,160,23,0.25)")}
-              />
-              <input
-                type="tel"
-                placeholder="Телефон"
-                className="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(212,160,23,0.25)", color: "var(--viel-text)", fontFamily: "'IBM Plex Sans', sans-serif" }}
-                onFocus={e => (e.target.style.borderColor = "var(--viel-gold)")}
-                onBlur={e => (e.target.style.borderColor = "rgba(212,160,23,0.25)")}
-              />
-              <button className="w-full py-4 rounded-lg viel-btn text-base">
-                Отправить заявку
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 
