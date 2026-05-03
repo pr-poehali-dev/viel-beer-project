@@ -532,7 +532,7 @@ export default function Index() {
             <span style={{ display: "inline-block" }}>легко запомнить.</span>
           </h2>
           <p className="text-base mb-12 max-w-xl mx-auto leading-relaxed" style={{ color: "rgba(240,234,214,0.7)" }}>
-            Мы ищем дистрибьюторов, рестораны, бары и розничные сети по всей России. Свяжитесь с нами — ответим в течение 2 часов.
+            Наши клиенты это — рестораны, бары, розничные сети и базы отдыха на Дальнем Востоке. Свяжитесь с нами — ответим в течение 2 часов.
           </p>
 
           <div className="grid md:grid-cols-3 gap-4 mb-12">
