@@ -21,40 +21,76 @@ const ADVANTAGES = [
 
 const RANGE = [
   {
-    name: "VIEL GOLD",
-    type: "Светлый лагер",
-    abv: "4.8%",
-    ibu: "18 IBU",
-    desc: "Классический светлый лагер с мягким хмелевым ароматом и освежающим послевкусием. Идеален для жаркого лета.",
-    color: "#D4A017",
-    badge: "хит продаж",
+    name: "МДЛДМХ (МDLDMX)",
+    type: "Пиво светлое крафтовое пастеризованное",
+    abv: "3,7%",
+    volume: "500 мл",
+    pack: "Ж/Б · ящик 12 шт.",
+    note: "",
   },
   {
-    name: "VIEL DARK",
-    type: "Тёмный портер",
-    abv: "6.2%",
-    ibu: "32 IBU",
-    desc: "Насыщенный тёмный портер с нотами жареного солода, шоколада и кофе. Для ценителей глубокого вкуса.",
-    color: "#7B4F2E",
-    badge: "новинка",
+    name: "МАЙХАЙЛА (Maihaila)",
+    type: "Пиво светлое фильтрованное пастеризованное",
+    abv: "4,0%",
+    volume: "500 мл",
+    pack: "Ж/Б · ящик 24 шт.",
+    note: "",
   },
   {
-    name: "VIEL WHEAT",
-    type: "Пшеничное нефильтрованное",
-    abv: "5.1%",
-    ibu: "14 IBU",
-    desc: "Нефильтрованное пшеничное пиво с лёгким цитрусовым ароматом и мягкой пряностью кориандра.",
-    color: "#C8A84B",
-    badge: null,
+    name: "Буланги (Bulangki)",
+    type: "Пиво светлое фильтрованное пастеризованное",
+    abv: "3,7%",
+    volume: "500 мл",
+    pack: "Ж/Б · ящик 12 шт.",
+    note: "",
   },
   {
-    name: "VIEL RED",
-    type: "Красный эль",
-    abv: "5.5%",
-    ibu: "24 IBU",
-    desc: "Красный эль с карамельным солодом, хрустящей горечью и долгим фруктово-ореховым послевкусием.",
-    color: "#C0392B",
-    badge: null,
+    name: "БИТТАУЭР БУРГЕРБРАУ (VITTAUER BURGERBRAU)",
+    type: "Пиво Пилс светлое фильтрованное пастеризованное",
+    abv: "3,6%",
+    volume: "500 мл",
+    pack: "Ж/Б · ящик 12 шт.",
+    note: "",
+  },
+  {
+    name: "Буланги Бронк Шип (Bulangke Bronk Sheep)",
+    type: "Пиво светлое фильтрованное пастеризованное",
+    abv: "4,5%",
+    volume: "500 мл",
+    pack: "Ст./Б · ящик 12 шт.",
+    note: "",
+  },
+  {
+    name: "Буджиажу лагер (Bujiajue lager Beer)",
+    type: "Пиво светлое фильтрованное пастеризованное",
+    abv: "4,1%",
+    volume: "500 мл",
+    pack: "Ж/Б · ящик 12 шт.",
+    note: "Сварено по традиционным рецептам с использованием немецких технологий",
+  },
+  {
+    name: "ФЛСДК лагер (FLSDK lager Beer)",
+    type: "Пиво светлое пастеризованное фильтрованное крафтовое",
+    abv: "4,1%",
+    volume: "500 мл",
+    pack: "Ж/Б · ящик 12 шт.",
+    note: "",
+  },
+  {
+    name: "Фина Прейст (Fima Priest)",
+    type: "Пиво крафтовое светлое пастеризованное",
+    abv: "4,5%",
+    volume: "500 мл",
+    pack: "Ж/Б · ящик 12 шт.",
+    note: "",
+  },
+  {
+    name: "ГЭ ДЭ ЛИ ФУ ДА СИН",
+    type: "Пиво светлое фильтрованное",
+    abv: "4,2%",
+    volume: "500 мл",
+    pack: "Ж/Б · ящик 12 шт.",
+    note: "Сварено в испанском стиле",
   },
 ];
 
@@ -336,39 +372,34 @@ export default function Index() {
             <span className="text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: "var(--viel-gold)", fontFamily: "'Oswald', sans-serif" }}>Линейка</span>
             <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}>АССОРТИМЕНТ</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {RANGE.map((beer, i) => (
               <div
                 key={i}
-                className="relative p-8 rounded-2xl overflow-hidden transition-all duration-300"
+                className="flex flex-col p-6 rounded-2xl transition-all duration-300"
                 style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(212,160,23,0.15)" }}
                 onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.borderColor = "rgba(212,160,23,0.4)"; }}
                 onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.02)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = "rgba(212,160,23,0.15)"; }}
               >
-                <div className="absolute top-0 left-0 w-1 h-full rounded-l-2xl" style={{ background: beer.color }} />
-                <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-10" style={{ background: beer.color, transform: "translate(30%,-30%)" }} />
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-3xl font-bold mb-1" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.1em", color: beer.color }}>{beer.name}</h3>
-                    <p className="text-xs tracking-widest uppercase" style={{ fontFamily: "'Oswald', sans-serif", color: "var(--viel-muted)" }}>{beer.type}</p>
-                  </div>
-                  {beer.badge && (
-                    <span className="text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold" style={{ background: `${beer.color}22`, color: beer.color, border: `1px solid ${beer.color}55`, fontFamily: "'Oswald', sans-serif" }}>
-                      {beer.badge}
-                    </span>
-                  )}
+                <div className="mb-1">
+                  <span className="text-xs tracking-widest uppercase" style={{ fontFamily: "'Oswald', sans-serif", color: "var(--viel-gold)", opacity: 0.7 }}>{i + 1}.</span>
                 </div>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(240,234,214,0.7)" }}>{beer.desc}</p>
-                <div className="flex gap-6">
-                  <div>
-                    <div className="text-2xl font-bold" style={{ fontFamily: "'Bebas Neue', sans-serif", color: beer.color }}>{beer.abv}</div>
-                    <div className="text-xs uppercase tracking-wider" style={{ color: "var(--viel-muted)", fontFamily: "'Oswald', sans-serif" }}>Крепость</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold" style={{ fontFamily: "'Bebas Neue', sans-serif", color: beer.color }}>{beer.ibu}</div>
-                    <div className="text-xs uppercase tracking-wider" style={{ color: "var(--viel-muted)", fontFamily: "'Oswald', sans-serif" }}>Горечь</div>
-                  </div>
+                <h3 className="text-lg font-bold mb-1 leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em", color: "var(--viel-gold)" }}>{beer.name}</h3>
+                <p className="text-xs mb-4 leading-snug" style={{ color: "rgba(240,234,214,0.6)", fontFamily: "'Oswald', sans-serif" }}>{beer.type}</p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <span className="text-xs px-3 py-1 rounded-full font-semibold" style={{ background: "rgba(212,160,23,0.12)", color: "var(--viel-gold)", border: "1px solid rgba(212,160,23,0.3)", fontFamily: "'Oswald', sans-serif" }}>
+                    {beer.abv}
+                  </span>
+                  <span className="text-xs px-3 py-1 rounded-full" style={{ background: "rgba(255,255,255,0.05)", color: "rgba(240,234,214,0.7)", border: "1px solid rgba(255,255,255,0.1)", fontFamily: "'Oswald', sans-serif" }}>
+                    {beer.volume}
+                  </span>
+                  <span className="text-xs px-3 py-1 rounded-full" style={{ background: "rgba(255,255,255,0.05)", color: "rgba(240,234,214,0.7)", border: "1px solid rgba(255,255,255,0.1)", fontFamily: "'Oswald', sans-serif" }}>
+                    {beer.pack}
+                  </span>
                 </div>
+                {beer.note && (
+                  <p className="text-xs mt-3 italic" style={{ color: "rgba(240,234,214,0.45)" }}>{beer.note}</p>
+                )}
               </div>
             ))}
           </div>
