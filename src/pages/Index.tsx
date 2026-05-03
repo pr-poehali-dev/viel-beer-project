@@ -391,7 +391,7 @@ export default function Index() {
                 onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.02)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = "rgba(212,160,23,0.15)"; }}
               >
                 {beer.image && (
-                  <div className="mb-4 rounded-xl overflow-hidden" style={{ background: "rgba(255,255,255,0.03)" }}>
+                  <div className="mb-4 rounded-xl overflow-hidden" style={{ background: "#c8a96e" }}>
                     <img src={beer.image} alt={beer.name} className="w-full h-48 object-contain" />
                   </div>
                 )}
