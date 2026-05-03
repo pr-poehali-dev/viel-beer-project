@@ -110,6 +110,7 @@ const REVIEWS = [
     text: "Работаем с поставщиком уже несколько месяцев. Важный плюс — стабильное наличие товара и понятные условия по опту. Китайское пиво хорошо берут как для полки, так и под акции. По поставкам без срывов, менеджер на связи, документы оформляют быстро.",
     author: "Алексей Морозов",
     role: "Категорийный менеджер",
+    avatar: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/files/e9742e42-1a3f-46cb-bad2-15ec62b1467f.jpg",
     stars: 5,
   },
   {
@@ -118,6 +119,7 @@ const REVIEWS = [
     text: "Брали китайское пиво на тест в барную карту, и оно быстро зашло гостям. Хорошо работает как альтернатива привычным маркам, особенно тем, кто любит лёгкий вкус. Поставщик удобный, по запросам реагирует быстро, можно планировать закупки заранее.",
     author: "Дарья Ковалёва",
     role: "Совладелец",
+    avatar: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/files/76c793b6-a8ad-4b29-98d5-13e12eae9588.jpg",
     stars: 5,
   },
   {
@@ -126,6 +128,7 @@ const REVIEWS = [
     text: "Нам было важно найти пиво, которое подходит к азиатской кухне и хорошо смотрится в меню. Позиции VIEL отлично вписались в концепцию ресторана: вкус понятный, подача аккуратная, гости часто заказывают повторно. Для нас это удачное решение.",
     author: "Олег Ким",
     role: "Управляющий",
+    avatar: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/files/b2189b04-75c8-408d-88be-dd6bab6c913f.jpg",
     stars: 5,
   },
   {
@@ -134,6 +137,7 @@ const REVIEWS = [
     text: "Для нас важно, чтобы товар был не только по цене, но и с нормальной оборачиваемостью. Китайское пиво от VIEL показало себя хорошо: есть повторные покупки, покупатели интересуются новым ассортиментом, особенно в тёплый сезон. Сотрудничеством довольны.",
     author: "Ирина Степанова",
     role: "Директор по закупкам",
+    avatar: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/files/cb118883-71ab-4c99-936c-871d10aebba6.jpg",
     stars: 5,
   },
 ];
@@ -447,9 +451,7 @@ export default function Index() {
                 </div>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(240,234,214,0.8)", fontStyle: "italic" }}>«{r.text}»</p>
                 <div className="flex items-center gap-3 pt-4" style={{ borderTop: "1px solid rgba(212,160,23,0.15)" }}>
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: "rgba(212,160,23,0.2)", color: "var(--viel-gold)", fontFamily: "'Oswald', sans-serif" }}>
-                    {r.author.split(" ").map(n => n[0]).join("")}
-                  </div>
+                  <img src={r.avatar} alt={r.author} className="w-10 h-10 rounded-full object-cover flex-shrink-0" style={{ border: "2px solid rgba(212,160,23,0.4)" }} />
                   <div>
                     <div className="text-sm font-semibold" style={{ fontFamily: "'Oswald', sans-serif" }}>{r.author}</div>
                     <div className="text-xs" style={{ color: "var(--viel-muted)" }}>{r.role}</div>
