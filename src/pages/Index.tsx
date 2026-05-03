@@ -439,10 +439,6 @@ export default function Index() {
                 onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.02)"; e.currentTarget.style.borderColor = "rgba(212,160,23,0.15)"; }}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <div className="text-lg font-bold mb-1" style={{ fontFamily: "'Oswald', sans-serif", color: "var(--viel-gold)", letterSpacing: "0.05em" }}>{r.name}</div>
-                    <div className="text-xs tracking-widest uppercase" style={{ color: "var(--viel-muted)", fontFamily: "'Oswald', sans-serif" }}>{r.type}</div>
-                  </div>
                   <div className="flex gap-1">
                     {Array(r.stars).fill(0).map((_, j) => (
                       <span key={j} style={{ color: "var(--viel-gold)", fontSize: "14px" }}>★</span>
