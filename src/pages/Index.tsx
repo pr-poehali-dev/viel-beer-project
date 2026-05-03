@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
 const BOTTLE_IMG = "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/c35caf61-6c1b-49aa-ad7c-63f34dc42289.jpg";
@@ -168,6 +168,14 @@ const FAQS = [
 export default function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [reviewIndex, setReviewIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setReviewIndex(i => (i + 1) % REVIEWS.length);
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="min-h-screen" style={{ background: "var(--viel-dark)", color: "var(--viel-text)" }}>
@@ -433,32 +441,43 @@ export default function Index() {
             <span className="text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: "var(--viel-gold)", fontFamily: "'Oswald', sans-serif" }}>Доверяют профессионалы</span>
             <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}>ОТЗЫВЫ ПАРТНЁРОВ</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {REVIEWS.map((r, i) => (
+          <div className="relative max-w-2xl mx-auto">
+            <div className="overflow-hidden">
               <div
-                key={i}
-                className="p-8 rounded-2xl transition-all duration-300"
-                style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(212,160,23,0.15)" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "rgba(212,160,23,0.04)"; e.currentTarget.style.borderColor = "rgba(212,160,23,0.4)"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.02)"; e.currentTarget.style.borderColor = "rgba(212,160,23,0.15)"; }}
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${reviewIndex * 100}%)` }}
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex gap-1">
-                    {Array(r.stars).fill(0).map((_, j) => (
-                      <span key={j} style={{ color: "var(--viel-gold)", fontSize: "14px" }}>★</span>
-                    ))}
+                {REVIEWS.map((r, i) => (
+                  <div key={i} className="w-full flex-shrink-0 px-2">
+                    <div className="p-8 rounded-2xl" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(212,160,23,0.15)" }}>
+                      <div className="flex gap-1 mb-4">
+                        {Array(r.stars).fill(0).map((_, j) => (
+                          <span key={j} style={{ color: "var(--viel-gold)", fontSize: "14px" }}>★</span>
+                        ))}
+                      </div>
+                      <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(240,234,214,0.8)", fontStyle: "italic" }}>«{r.text}»</p>
+                      <div className="flex items-center gap-3 pt-4" style={{ borderTop: "1px solid rgba(212,160,23,0.15)" }}>
+                        <img src={r.avatar} alt={r.author} className="w-10 h-10 rounded-full object-cover flex-shrink-0" style={{ border: "2px solid rgba(212,160,23,0.4)" }} />
+                        <div>
+                          <div className="text-sm font-semibold" style={{ fontFamily: "'Oswald', sans-serif" }}>{r.author}</div>
+                          <div className="text-xs" style={{ color: "var(--viel-muted)" }}>{r.role}</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(240,234,214,0.8)", fontStyle: "italic" }}>«{r.text}»</p>
-                <div className="flex items-center gap-3 pt-4" style={{ borderTop: "1px solid rgba(212,160,23,0.15)" }}>
-                  <img src={r.avatar} alt={r.author} className="w-10 h-10 rounded-full object-cover flex-shrink-0" style={{ border: "2px solid rgba(212,160,23,0.4)" }} />
-                  <div>
-                    <div className="text-sm font-semibold" style={{ fontFamily: "'Oswald', sans-serif" }}>{r.author}</div>
-                    <div className="text-xs" style={{ color: "var(--viel-muted)" }}>{r.role}</div>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="flex justify-center gap-2 mt-6">
+              {REVIEWS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setReviewIndex(i)}
+                  className="w-2 h-2 rounded-full transition-all duration-300"
+                  style={{ background: i === reviewIndex ? "var(--viel-gold)" : "rgba(212,160,23,0.25)", transform: i === reviewIndex ? "scale(1.3)" : "scale(1)" }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
