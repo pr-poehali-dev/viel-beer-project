@@ -36,7 +36,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 24 шт.",
     note: "",
-    image: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/153973f7-d41f-4610-9923-982a063ac427.jpg",
   },
   {
     name: "Буланги (Bulangki)",
@@ -45,7 +45,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
-    image: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/167f0619-17d7-4192-a081-62b277dcf582.jpg",
   },
   {
     name: "БИТТАУЭР БУРГЕРБРАУ (VITTAUER BURGERBRAU)",
@@ -54,7 +54,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
-    image: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/f39b64f8-8736-4a75-b710-80863dba4621.jpg",
   },
   {
     name: "Буланги Бронк Шип (Bulangke Bronk Sheep)",
@@ -63,7 +63,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ст./Б · ящик 12 шт.",
     note: "",
-    image: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/c1131409-0ab0-4f79-8b45-40a6b421e924.jpg",
   },
   {
     name: "Буджиажу лагер (Bujiajue lager Beer)",
