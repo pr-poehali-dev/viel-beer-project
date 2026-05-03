@@ -27,6 +27,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/6f5567de-91ae-44c2-8ef6-080addf31389.jpg",
   },
   {
     name: "МАЙХАЙЛА (Maihaila)",
@@ -35,6 +36,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 24 шт.",
     note: "",
+    image: "",
   },
   {
     name: "Буланги (Bulangki)",
@@ -43,6 +45,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
+    image: "",
   },
   {
     name: "БИТТАУЭР БУРГЕРБРАУ (VITTAUER BURGERBRAU)",
@@ -51,6 +54,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
+    image: "",
   },
   {
     name: "Буланги Бронк Шип (Bulangke Bronk Sheep)",
@@ -59,6 +63,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ст./Б · ящик 12 шт.",
     note: "",
+    image: "",
   },
   {
     name: "Буджиажу лагер (Bujiajue lager Beer)",
@@ -67,6 +72,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "Сварено по традиционным рецептам с использованием немецких технологий",
+    image: "",
   },
   {
     name: "ФЛСДК лагер (FLSDK lager Beer)",
@@ -75,6 +81,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
+    image: "",
   },
   {
     name: "Фина Прейст (Fima Priest)",
@@ -83,6 +90,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
+    image: "",
   },
   {
     name: "ГЭ ДЭ ЛИ ФУ ДА СИН",
@@ -91,6 +99,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "Сварено в испанском стиле",
+    image: "",
   },
 ];
 
@@ -381,6 +390,11 @@ export default function Index() {
                 onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.borderColor = "rgba(212,160,23,0.4)"; }}
                 onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.02)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = "rgba(212,160,23,0.15)"; }}
               >
+                {beer.image && (
+                  <div className="mb-4 rounded-xl overflow-hidden" style={{ background: "rgba(255,255,255,0.03)" }}>
+                    <img src={beer.image} alt={beer.name} className="w-full h-48 object-contain" />
+                  </div>
+                )}
                 <div className="mb-1">
                   <span className="text-xs tracking-widest uppercase" style={{ fontFamily: "'Oswald', sans-serif", color: "var(--viel-gold)", opacity: 0.7 }}>{i + 1}.</span>
                 </div>
