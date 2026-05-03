@@ -72,7 +72,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "Сварено по традиционным рецептам с использованием немецких технологий",
-    image: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/6e90091d-0ba3-4782-b1a8-f05da8422032.jpg",
   },
   {
     name: "ФЛСДК лагер (FLSDK lager Beer)",
@@ -81,7 +81,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
-    image: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/e0f88084-956e-400f-ba77-b9ce6fa8889f.jpg",
   },
   {
     name: "Фина Прейст (Fima Priest)",
@@ -90,7 +90,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "",
-    image: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/64243c07-63ce-4b44-917d-8c6a96fba204.jpg",
   },
   {
     name: "ГЭ ДЭ ЛИ ФУ ДА СИН",
@@ -99,7 +99,7 @@ const RANGE = [
     volume: "500 мл",
     pack: "Ж/Б · ящик 12 шт.",
     note: "Сварено в испанском стиле",
-    image: "",
+    image: "https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/4e73becf-6d8e-48d8-bd19-67ed013e27b3.jpg",
   },
 ];
 
