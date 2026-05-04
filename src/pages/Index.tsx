@@ -238,7 +238,13 @@ export default function Index() {
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4"
         style={{ background: "rgba(10,10,10,0.85)", backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(212,160,23,0.15)" }}
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <img
+            src="https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/ffd12831-1758-499d-a396-03e5f2a5480a.png"
+            alt="VIEL Beer"
+            className="w-10 h-10 object-contain"
+            style={{ filter: "drop-shadow(0 0 6px rgba(243,198,35,0.4))" }}
+          />
           <span className="font-bebas text-3xl tracking-widest" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             <span style={{ color: "#F5C842" }}>VI</span><span style={{ color: "#FFFFFF" }}>EL</span>
           </span>
