@@ -647,7 +647,7 @@ export default function Index() {
             </p>
 
             <a
-              href="tel:+79084423217"
+              href="#contacts"
               onClick={closePromo}
               className="block w-full py-3 rounded-xl font-bold text-sm tracking-widest uppercase transition-all"
               style={{ background: "linear-gradient(90deg, #D4A017, #F5C842)", color: "#0a0a0a", fontFamily: "'Oswald', sans-serif", letterSpacing: "0.1em" }}
