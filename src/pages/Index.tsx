@@ -622,6 +622,32 @@ export default function Index() {
       {/* REVIEWS */}
       <section id="reviews" className="py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent, rgba(212,160,23,0.03) 50%, transparent)" }} />
+        <div className="viel-bg-wrap">
+          <div className="viel-bg-ornament" style={{ opacity: 0.6 }} />
+          <div className="viel-bg-hieroglyphs">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <text x="2%"  y="25%" fontSize="80" fill="rgba(243,198,35,0.04)" fontFamily="serif">福</text>
+              <text x="87%" y="20%" fontSize="72" fill="rgba(243,198,35,0.04)" fontFamily="serif">龍</text>
+              <text x="4%"  y="80%" fontSize="60" fill="rgba(243,198,35,0.04)" fontFamily="serif">品</text>
+              <text x="90%" y="75%" fontSize="56" fill="rgba(243,198,35,0.04)" fontFamily="serif">酒</text>
+            </svg>
+          </div>
+          <div style={{
+            position: "absolute", top: "50%", left: "8%",
+            transform: "translateY(-50%)",
+            width: 450, height: 450, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(243,198,35,0.07) 0%, transparent 70%)",
+            filter: "blur(40px)",
+            animation: "heroGlow 8s ease-in-out infinite",
+          }} />
+          <div style={{
+            position: "absolute", top: "30%", right: "6%",
+            width: 380, height: 380, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(211,47,47,0.05) 0%, rgba(243,198,35,0.04) 40%, transparent 70%)",
+            filter: "blur(50px)",
+            animation: "heroPulse 10s ease-in-out infinite",
+          }} />
+        </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-16">
             <div className="mx-auto mb-6" style={{ width: "60px", height: "3px", background: "linear-gradient(90deg, transparent, var(--viel-gold), transparent)" }} />
@@ -670,8 +696,33 @@ export default function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 md:py-32">
-        <div className="max-w-4xl mx-auto px-6 md:px-12">
+      <section id="faq" className="py-24 md:py-32 relative overflow-hidden">
+        <div className="viel-bg-wrap">
+          <div className="viel-bg-ornament" style={{ opacity: 0.6 }} />
+          <div className="viel-bg-hieroglyphs2">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <text x="3%"  y="22%" fontSize="76" fill="rgba(243,198,35,0.04)" fontFamily="serif">祥</text>
+              <text x="88%" y="18%" fontSize="64" fill="rgba(243,198,35,0.04)" fontFamily="serif">壽</text>
+              <text x="5%"  y="78%" fontSize="58" fill="rgba(243,198,35,0.04)" fontFamily="serif">金</text>
+              <text x="86%" y="80%" fontSize="68" fill="rgba(243,198,35,0.04)" fontFamily="serif">瑞</text>
+            </svg>
+          </div>
+          <div style={{
+            position: "absolute", top: "40%", left: "5%",
+            width: 420, height: 420, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(243,198,35,0.07) 0%, transparent 70%)",
+            filter: "blur(45px)",
+            animation: "heroPulse 10s ease-in-out infinite",
+          }} />
+          <div style={{
+            position: "absolute", top: "35%", right: "5%",
+            width: 360, height: 360, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(211,47,47,0.05) 0%, rgba(243,198,35,0.04) 40%, transparent 70%)",
+            filter: "blur(45px)",
+            animation: "heroGlow 9s ease-in-out infinite 1s",
+          }} />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
           <div className="mb-16">
             <div className="section-line mb-6" />
             <span className="text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: "var(--viel-gold)", fontFamily: "'Oswald', sans-serif" }}>Вопросы и ответы</span>
