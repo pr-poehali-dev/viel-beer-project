@@ -704,8 +704,106 @@ export default function Index() {
 
       {/* CONTACTS */}
       <section id="contacts" className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(212,160,23,0.06) 0%, transparent 60%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0b0f14 0%, #0d1420 50%, #0a0a0a 100%)" }} />
         <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, var(--viel-gold), transparent)" }} />
+
+        {/* Animated background */}
+        <div className="viel-bg-wrap">
+          {/* Diagonal ornament lines */}
+          <div className="viel-bg-ornament" style={{ opacity: 0.7 }} />
+
+          {/* Hieroglyphs */}
+          <div className="viel-bg-hieroglyphs">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <text x="2%"  y="20%" fontSize="88" fill="rgba(243,198,35,0.05)" fontFamily="serif">福</text>
+              <text x="85%" y="25%" fontSize="72" fill="rgba(243,198,35,0.04)" fontFamily="serif">龍</text>
+              <text x="6%"  y="78%" fontSize="64" fill="rgba(243,198,35,0.05)" fontFamily="serif">酒</text>
+              <text x="88%" y="75%" fontSize="56" fill="rgba(243,198,35,0.04)" fontFamily="serif">吉</text>
+              <text x="45%" y="92%" fontSize="48" fill="rgba(243,198,35,0.03)" fontFamily="serif">品</text>
+            </svg>
+          </div>
+          <div className="viel-bg-hieroglyphs2">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <text x="20%" y="10%" fontSize="40" fill="rgba(243,198,35,0.03)" fontFamily="serif">壽</text>
+              <text x="72%" y="55%" fontSize="52" fill="rgba(243,198,35,0.04)" fontFamily="serif">祥</text>
+              {/* Dragon path */}
+              <path d="M100,300 Q200,220 300,260 Q380,290 400,350 Q420,410 370,440 Q310,460 240,430 Q160,400 130,340 Q100,280 100,300Z
+                       M300,260 Q360,190 420,170 Q480,155 500,190 Q510,220 470,240 Q430,255 380,265Z
+                       M400,350 Q430,400 460,450 Q490,500 460,525 Q430,540 400,510 Q375,485 385,445Z"
+                fill="rgba(243,198,35,0.05)" />
+            </svg>
+          </div>
+
+          {/* Mountain mist */}
+          <div className="viel-bg-dragon" style={{ left: "-5%", right: "auto", bottom: "0%", opacity: 0.05 }}>
+            <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="mistC" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#f3c623" stopOpacity="0.9"/>
+                  <stop offset="100%" stopColor="#f3c623" stopOpacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,400 L60,260 L130,200 L200,240 L270,120 L340,60 L410,110 L470,80 L540,150 L600,185 L660,155 L700,195 L700,400Z" fill="url(#mistC)"/>
+              <path d="M0,400 L90,310 L170,290 L240,320 L310,240 L390,290 L450,260 L530,300 L610,275 L700,310 L700,400Z" fill="rgba(243,198,35,0.10)"/>
+            </svg>
+          </div>
+
+          {/* Glow center */}
+          <div style={{
+            position: "absolute", top: "50%", left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 600, height: 400, borderRadius: "50%",
+            background: "radial-gradient(ellipse, rgba(243,198,35,0.07) 0%, rgba(211,47,47,0.04) 50%, transparent 70%)",
+            filter: "blur(50px)",
+            animation: "heroGlow 8s ease-in-out infinite",
+          }} />
+
+          {/* Glow left */}
+          <div style={{
+            position: "absolute", top: "30%", left: "0%",
+            width: 350, height: 350, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(243,198,35,0.06) 0%, transparent 70%)",
+            filter: "blur(40px)",
+            animation: "heroPulse 10s ease-in-out infinite",
+          }} />
+
+          {/* Glow right */}
+          <div style={{
+            position: "absolute", top: "50%", right: "0%",
+            width: 300, height: 300, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(211,47,47,0.05) 0%, transparent 70%)",
+            filter: "blur(40px)",
+            animation: "heroPulse 12s ease-in-out infinite 2s",
+          }} />
+
+          {/* Foam bubbles around contact cards */}
+          {[
+            { left: "20%", bottom: "5%",  size: 5, dur: "4.2s", delay: "0s"   },
+            { left: "35%", bottom: "8%",  size: 3, dur: "5.5s", delay: "1.5s" },
+            { left: "50%", bottom: "4%",  size: 6, dur: "4.8s", delay: "0.8s" },
+            { left: "65%", bottom: "7%",  size: 4, dur: "6.0s", delay: "2.2s" },
+            { left: "78%", bottom: "6%",  size: 3, dur: "3.9s", delay: "0.4s" },
+            { left: "25%", bottom: "10%", size: 4, dur: "5.2s", delay: "3.1s" },
+            { left: "55%", bottom: "12%", size: 5, dur: "4.5s", delay: "1.9s" },
+          ].map((b, i) => (
+            <div key={i} className="viel-bubble" style={{
+              left: b.left, bottom: b.bottom,
+              width: b.size, height: b.size,
+              animationDuration: b.dur,
+              animationDelay: b.delay,
+            }} />
+          ))}
+
+          {/* Spin ring decorative */}
+          <div style={{
+            position: "absolute", top: "50%", left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 500, height: 500, borderRadius: "50%",
+            border: "1px solid rgba(243,198,35,0.06)",
+            animation: "heroSpin 40s linear infinite",
+          }} />
+        </div>
+
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">
           <div className="mx-auto mb-6" style={{ width: "60px", height: "3px", background: "linear-gradient(90deg, transparent, var(--viel-gold), transparent)" }} />
           <span className="text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: "var(--viel-gold)", fontFamily: "'Oswald', sans-serif" }}>Сотрудничество</span>
