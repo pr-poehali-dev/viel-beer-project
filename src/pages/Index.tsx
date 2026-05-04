@@ -852,10 +852,16 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="py-8 px-6 md:px-12" style={{ borderTop: "1px solid rgba(212,160,23,0.15)", background: "rgba(0,0,0,0.3)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <img
+              src="https://cdn.poehali.dev/projects/30f656f9-1309-47a8-9fc9-23ebcc046d71/bucket/6c46c91f-51a2-481e-9469-97e020c47fc2.png"
+              alt="VIEL Beer"
+              className="w-9 h-9 object-contain"
+              style={{ filter: "drop-shadow(0 0 5px rgba(243,198,35,0.35))" }}
+            />
             <span className="text-2xl font-bold tracking-widest" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
-            <span style={{ color: "#F5C842" }}>VI</span><span style={{ color: "#FFFFFF" }}>EL</span>
-          </span>
+              <span style={{ color: "#F5C842" }}>VI</span><span style={{ color: "#FFFFFF" }}>EL</span>
+            </span>
             <span className="text-xs" style={{ color: "var(--viel-muted)", fontFamily: "'Oswald', sans-serif" }}>BEER</span>
           </div>
           <p className="text-xs text-center" style={{ color: "var(--viel-muted)" }}>
