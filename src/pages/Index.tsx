@@ -169,10 +169,59 @@ const FAQS = [
   },
 ];
 
+const PROMO_END = new Date("2026-05-10T23:59:59");
+
+function usePromoCountdown() {
+  const [timeLeft, setTimeLeft] = useState("");
+  useEffect(() => {
+    const calc = () => {
+      const diff = PROMO_END.getTime() - Date.now();
+      if (diff <= 0) { setTimeLeft("Акция завершена"); return; }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000).toString().padStart(2, "0");
+      const m = Math.floor((diff % 3600000) / 60000).toString().padStart(2, "0");
+      const s = Math.floor((diff % 60000) / 1000).toString().padStart(2, "0");
+      setTimeLeft(`${d} дн ${h}:${m}:${s}`);
+    };
+    calc();
+    const t = setInterval(calc, 1000);
+    return () => clearInterval(t);
+  }, []);
+  return timeLeft;
+}
+
 export default function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [reviewIndex, setReviewIndex] = useState(0);
+  const [promoOpen, setPromoOpen] = useState(false);
+  const promoCountdown = usePromoCountdown();
+
+  const closePromo = () => {
+    setPromoOpen(false);
+    localStorage.setItem("viel_promo_closed", String(Date.now()));
+  };
+
+  useEffect(() => {
+    const closed = localStorage.getItem("viel_promo_closed");
+    if (closed && Date.now() - Number(closed) < 7 * 24 * 60 * 60 * 1000) return;
+
+    const timerShow = setTimeout(() => setPromoOpen(true), 10000);
+
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 0) {
+        const c = localStorage.getItem("viel_promo_closed");
+        if (c && Date.now() - Number(c) < 7 * 24 * 60 * 60 * 1000) return;
+        setPromoOpen(true);
+      }
+    };
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      clearTimeout(timerShow);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -557,6 +606,57 @@ export default function Index() {
 
         </div>
       </section>
+
+      {/* PROMO POPUP */}
+      {promoOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center px-4"
+          style={{ background: "rgba(0,0,0,0.7)", backdropFilter: "blur(6px)" }}
+          onClick={(e) => { if (e.target === e.currentTarget) closePromo(); }}
+        >
+          <div
+            className="relative w-full max-w-sm rounded-2xl p-8 text-center"
+            style={{ background: "linear-gradient(135deg, #1a1200 0%, #0a0a0a 60%, #1a0d00 100%)", border: "1px solid rgba(212,160,23,0.5)", boxShadow: "0 0 60px rgba(212,160,23,0.2)" }}
+          >
+            <button
+              onClick={closePromo}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full"
+              style={{ background: "rgba(255,255,255,0.08)", color: "rgba(240,234,214,0.6)" }}
+            >
+              <Icon name="X" size={16} />
+            </button>
+
+            <div className="text-4xl mb-3">🔥</div>
+            <h2 className="text-3xl font-bold mb-1" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}>
+              <span style={{ color: "#F5C842" }}>-40%</span>{" "}
+              <span style={{ color: "#fff" }}>НА КИТАЙСКОЕ ПИВО!</span>
+            </h2>
+            <p className="text-sm mb-1" style={{ color: "rgba(240,234,214,0.7)", fontFamily: "'Oswald', sans-serif" }}>
+              До 10 мая • ВиЭль • ДВ
+            </p>
+            <div
+              className="inline-block px-4 py-2 rounded-xl mt-2 mb-4"
+              style={{ background: "rgba(212,160,23,0.12)", border: "1px solid rgba(212,160,23,0.3)" }}
+            >
+              <span className="text-xs tracking-widest uppercase" style={{ color: "var(--viel-muted)", fontFamily: "'Oswald', sans-serif" }}>Промокод:</span>
+              <div className="text-2xl font-bold tracking-[0.2em]" style={{ fontFamily: "'Bebas Neue', sans-serif", color: "#F5C842" }}>МАЙСКИЕ</div>
+            </div>
+
+            <p className="text-sm mb-4" style={{ color: "rgba(240,234,214,0.6)", fontFamily: "'Oswald', sans-serif" }}>
+              ⏰ Акция действует: <span style={{ color: "#F5C842" }}>{promoCountdown}</span>
+            </p>
+
+            <a
+              href="tel:+79084423217"
+              onClick={closePromo}
+              className="block w-full py-3 rounded-xl font-bold text-sm tracking-widest uppercase transition-all"
+              style={{ background: "linear-gradient(90deg, #D4A017, #F5C842)", color: "#0a0a0a", fontFamily: "'Oswald', sans-serif", letterSpacing: "0.1em" }}
+            >
+              ПОЛУЧИТЬ СКИДКУ
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* SEO TEXT */}
       <section className="py-16 md:py-20" style={{ borderTop: "1px solid rgba(212,160,23,0.1)" }}>
