@@ -232,3 +232,233 @@
   height: 3px;
   background: linear-gradient(90deg, var(--viel-gold), transparent);
 }
+
+/* ===== VIEL HERO BACKGROUND ANIMATION ===== */
+
+@keyframes heroDrift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.06;
+  }
+  50% {
+    transform: translate(30px, -40px) rotate(3deg);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.06;
+  }
+}
+@keyframes heroDrift2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.04;
+  }
+  50% {
+    transform: translate(-25px, 35px) rotate(-2deg);
+    opacity: 0.08;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.04;
+  }
+}
+@keyframes heroDiag {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-120px, -120px);
+  }
+}
+@keyframes heroPulse {
+  0%,
+  100% {
+    opacity: 0.07;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.14;
+    transform: scale(1.04);
+  }
+}
+@keyframes heroGlow {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08);
+  }
+}
+@keyframes heroBubble {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-110px) translateX(8px) scale(0.4);
+    opacity: 0;
+  }
+}
+@keyframes heroSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes heroOrbit {
+  from {
+    transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
+}
+@keyframes heroFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.viel-bg-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gradient base */
+.viel-bg-base {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 40%,
+    #0d1a2e 0%,
+    #0b0f14 50%,
+    #0a0a0a 100%
+  );
+}
+
+/* Diagonal drifting ornament layers */
+.viel-bg-ornament {
+  position: absolute;
+  inset: -20%;
+  width: 140%;
+  height: 140%;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      transparent 58px,
+      rgba(243, 198, 35, 0.07) 58px,
+      rgba(243, 198, 35, 0.07) 59px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 80px,
+      rgba(243, 198, 35, 0.04) 80px,
+      rgba(243, 198, 35, 0.04) 81px
+    );
+  animation: heroDiag 18s linear infinite;
+}
+
+/* Hieroglyphs SVG layer */
+.viel-bg-hieroglyphs {
+  position: absolute;
+  inset: 0;
+  animation: heroDrift 14s ease-in-out infinite;
+}
+.viel-bg-hieroglyphs2 {
+  position: absolute;
+  inset: 0;
+  animation: heroDrift2 18s ease-in-out infinite;
+}
+
+/* Dragon silhouette */
+.viel-bg-dragon {
+  position: absolute;
+  right: -5%;
+  bottom: 5%;
+  width: 55%;
+  max-width: 700px;
+  opacity: 0.06;
+  animation: heroPulse 10s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+/* Central glow behind bottle */
+.viel-bg-glow {
+  position: absolute;
+  top: 50%;
+  right: 22%;
+  transform: translate(50%, -50%);
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(243, 198, 35, 0.18) 0%,
+    rgba(211, 47, 47, 0.06) 50%,
+    transparent 70%
+  );
+  animation: heroGlow 6s ease-in-out infinite;
+  filter: blur(30px);
+}
+
+/* Bubbles / foam particles */
+.viel-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(243, 198, 35, 0.55);
+  animation: heroBubble linear infinite;
+  filter: blur(0.5px);
+}
+
+/* Spinning ring around bottle */
+.viel-spin-ring {
+  position: absolute;
+  top: 50%;
+  right: 22%;
+  transform: translate(50%, -50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px solid rgba(243, 198, 35, 0.12);
+  animation: heroSpin 30s linear infinite;
+}
+.viel-spin-ring::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 40%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(243, 198, 35, 0.7);
+  box-shadow: 0 0 8px 2px rgba(243, 198, 35, 0.4);
+}
+.viel-spin-ring2 {
+  position: absolute;
+  top: 50%;
+  right: 22%;
+  transform: translate(50%, -50%);
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1px dashed rgba(243, 198, 35, 0.07);
+  animation: heroSpin 50s linear infinite reverse;
+}

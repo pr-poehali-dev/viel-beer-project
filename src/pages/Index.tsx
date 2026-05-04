@@ -290,13 +290,81 @@ export default function Index() {
       {/* HERO */}
       <section
         className="relative min-h-screen flex items-center overflow-hidden noise-bg"
-        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #111108 40%, #0d0b04 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0b0f14 0%, #0d1420 40%, #0a0a0a 100%)" }}
       >
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: "linear-gradient(rgba(212,160,23,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(212,160,23,0.5) 1px, transparent 1px)",
-          backgroundSize: "80px 80px"
-        }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: "radial-gradient(circle, var(--viel-gold) 0%, transparent 70%)" }} />
+        {/* Animated premium background */}
+        <div className="viel-bg-wrap">
+          <div className="viel-bg-base" />
+          <div className="viel-bg-ornament" />
+
+          {/* Hieroglyphs layer 1 */}
+          <div className="viel-bg-hieroglyphs">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <text x="5%" y="18%" fontSize="64" fill="rgba(243,198,35,0.07)" fontFamily="serif">福</text>
+              <text x="80%" y="30%" fontSize="80" fill="rgba(243,198,35,0.05)" fontFamily="serif">龍</text>
+              <text x="12%" y="65%" fontSize="52" fill="rgba(243,198,35,0.06)" fontFamily="serif">酒</text>
+              <text x="70%" y="80%" fontSize="72" fill="rgba(243,198,35,0.05)" fontFamily="serif">品</text>
+              <text x="42%" y="90%" fontSize="44" fill="rgba(243,198,35,0.04)" fontFamily="serif">金</text>
+              <text x="90%" y="60%" fontSize="56" fill="rgba(243,198,35,0.04)" fontFamily="serif">吉</text>
+            </svg>
+          </div>
+
+          {/* Hieroglyphs layer 2 */}
+          <div className="viel-bg-hieroglyphs2">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <text x="25%" y="12%" fontSize="36" fill="rgba(243,198,35,0.04)" fontFamily="serif">壽</text>
+              <text x="60%" y="50%" fontSize="48" fill="rgba(243,198,35,0.04)" fontFamily="serif">祥</text>
+              <text x="3%" y="45%" fontSize="40" fill="rgba(243,198,35,0.03)" fontFamily="serif">瑞</text>
+              <text x="50%" y="72%" fontSize="34" fill="rgba(243,198,35,0.04)" fontFamily="serif">醇</text>
+              {/* Dragon silhouette path */}
+              <path d="M900,500 Q950,430 1020,450 Q1080,470 1100,520 Q1130,580 1080,610 Q1040,630 990,610 Q930,590 900,540 Q870,490 900,500Z
+                       M1020,450 Q1060,400 1100,380 Q1150,360 1180,390 Q1200,420 1160,440 Q1120,460 1080,470Z
+                       M900,540 Q860,560 820,590 Q790,620 810,650 Q830,670 860,650 Q890,630 910,600Z
+                       M1080,610 Q1100,650 1120,690 Q1140,730 1110,750 Q1080,760 1060,730 Q1040,700 1050,660Z"
+                fill="rgba(243,198,35,0.06)" />
+            </svg>
+          </div>
+
+          {/* Mountain mist silhouette */}
+          <div className="viel-bg-dragon">
+            <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#f3c623" stopOpacity="0.9"/>
+                  <stop offset="100%" stopColor="#f3c623" stopOpacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,400 L50,280 L120,220 L180,260 L250,140 L320,80 L390,130 L450,100 L520,160 L580,200 L650,170 L700,210 L700,400Z" fill="url(#mist)"/>
+              <path d="M0,400 L80,320 L160,300 L220,330 L300,250 L380,300 L440,270 L520,310 L600,290 L700,320 L700,400Z" fill="rgba(243,198,35,0.12)"/>
+            </svg>
+          </div>
+
+          {/* Central glow */}
+          <div className="viel-bg-glow" />
+
+          {/* Spin rings */}
+          <div className="viel-spin-ring" />
+          <div className="viel-spin-ring2" />
+
+          {/* Foam bubbles */}
+          {[
+            { left: "62%", bottom: "10%", size: 5, dur: "4.2s", delay: "0s" },
+            { left: "65%", bottom: "12%", size: 3, dur: "5.8s", delay: "1.2s" },
+            { left: "68%", bottom: "8%",  size: 7, dur: "3.9s", delay: "0.6s" },
+            { left: "71%", bottom: "15%", size: 4, dur: "6.1s", delay: "2.1s" },
+            { left: "59%", bottom: "9%",  size: 3, dur: "4.7s", delay: "0.3s" },
+            { left: "74%", bottom: "11%", size: 6, dur: "5.3s", delay: "1.8s" },
+            { left: "66%", bottom: "7%",  size: 2, dur: "3.5s", delay: "0.9s" },
+            { left: "70%", bottom: "13%", size: 4, dur: "6.5s", delay: "3.0s" },
+          ].map((b, i) => (
+            <div key={i} className="viel-bubble" style={{
+              left: b.left, bottom: b.bottom,
+              width: b.size, height: b.size,
+              animationDuration: b.dur,
+              animationDelay: b.delay,
+            }} />
+          ))}
+        </div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-16 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 max-w-xl">
