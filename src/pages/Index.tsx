@@ -431,8 +431,43 @@ export default function Index() {
       </div>
 
       {/* ABOUT */}
-      <section id="about" className="py-24 md:py-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section id="about" className="relative py-24 md:py-32 overflow-hidden">
+
+        {/* Ambient background */}
+        <div className="viel-bg-wrap" style={{ zIndex: 0 }}>
+          {/* Diagonal ornament lines */}
+          <div className="viel-bg-ornament" style={{ opacity: 0.6 }} />
+
+          {/* Hieroglyphs — left side */}
+          <div className="viel-bg-hieroglyphs">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <text x="2%" y="20%" fontSize="96" fill="rgba(243,198,35,0.04)" fontFamily="serif">酒</text>
+              <text x="5%" y="75%" fontSize="72" fill="rgba(243,198,35,0.05)" fontFamily="serif">福</text>
+              <text x="85%" y="15%" fontSize="80" fill="rgba(243,198,35,0.04)" fontFamily="serif">龍</text>
+              <text x="88%" y="70%" fontSize="60" fill="rgba(243,198,35,0.04)" fontFamily="serif">品</text>
+            </svg>
+          </div>
+
+          {/* Soft radial glow — left */}
+          <div style={{
+            position: "absolute", top: "50%", left: "5%",
+            transform: "translateY(-50%)",
+            width: 500, height: 500, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(243,198,35,0.08) 0%, transparent 70%)",
+            filter: "blur(40px)",
+            animation: "heroGlow 8s ease-in-out infinite",
+          }} />
+
+          {/* Soft radial glow — right */}
+          <div style={{
+            position: "absolute", top: "30%", right: "5%",
+            width: 400, height: 400, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(211,47,47,0.06) 0%, rgba(243,198,35,0.05) 40%, transparent 70%)",
+            filter: "blur(50px)",
+            animation: "heroPulse 10s ease-in-out infinite",
+          }} />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <div className="section-line mb-6" />
