@@ -558,6 +558,39 @@ export default function Index() {
         </div>
       </section>
 
+      {/* SEO TEXT */}
+      <section className="py-16 md:py-20" style={{ borderTop: "1px solid rgba(212,160,23,0.1)" }}>
+        <div className="max-w-4xl mx-auto px-6 md:px-12">
+          <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "'Oswald', sans-serif", color: "var(--viel-gold)" }}>
+            Почему выбирают ВиЭль для поставок азиатского пива
+          </h2>
+          <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(240,234,214,0.65)" }}>
+            Китайское пиво во Владивостоке и Приморском крае — это уже не экзотика, а рабочий товар. Компания ВиЭль предлагает поставки азиатского пива с доставкой во Владивосток, Артем, Уссурийск и пригород Приморского края.
+          </p>
+          <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(240,234,214,0.65)" }}>
+            Мы понимаем специфику Дальнего Востока: здесь важны стабильные поставки, понятная цена и ассортимент, который хорошо продаётся. Китайское пиво от ВиЭль — это лёгкие лагеры, которые отлично идут к азиатской кухне, шашлыкам и просто в жару.
+          </p>
+          <h3 className="text-lg font-semibold mb-2 mt-6" style={{ fontFamily: "'Oswald', sans-serif", color: "rgba(240,234,214,0.85)" }}>
+            Доставка китайского пива во Владивосток, Артем и Уссурийск
+          </h3>
+          <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(240,234,214,0.65)" }}>
+            Доставка китайского пива во Владивосток и пригород выполняется в удобные для вас сроки. Работаем как с оптовиками и магазинами, так и с барами, ресторанами и базами отдыха.
+          </p>
+          <h3 className="text-lg font-semibold mb-2 mt-4" style={{ fontFamily: "'Oswald', sans-serif", color: "rgba(240,234,214,0.85)" }}>
+            Азиатское пиво оптом для магазинов и баров
+          </h3>
+          <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(240,234,214,0.65)" }}>
+            Азиатское пиво оптом — это возможность разнообразить ассортимент и привлечь новых покупателей. Прямые поставки из Китая без посредников, стабильное качество и наличие товара.
+          </p>
+          <h3 className="text-lg font-semibold mb-2 mt-4" style={{ fontFamily: "'Oswald', sans-serif", color: "rgba(240,234,214,0.85)" }}>
+            Китайское пиво для HoReCa в Приморском крае
+          </h3>
+          <p className="text-sm leading-relaxed" style={{ color: "rgba(240,234,214,0.65)" }}>
+            Свяжитесь с нами, чтобы получить подборку азиатского пива под ваш магазин, бар или ресторан. Доставка китайского пива по Приморскому краю от ВиЭль — это надёжно и выгодно.
+          </p>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="py-8 px-6 md:px-12" style={{ borderTop: "1px solid rgba(212,160,23,0.15)", background: "rgba(0,0,0,0.3)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
