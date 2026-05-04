@@ -793,8 +793,32 @@ export default function Index() {
       )}
 
       {/* SEO TEXT */}
-      <section className="py-16 md:py-20" style={{ borderTop: "1px solid rgba(212,160,23,0.1)" }}>
-        <div className="max-w-4xl mx-auto px-6 md:px-12">
+      <section className="relative py-16 md:py-20 overflow-hidden" style={{ borderTop: "1px solid rgba(212,160,23,0.1)" }}>
+
+        {/* Sakura petals */}
+        {[
+          { top: "10%",  size: 20, delay: "0s",    dur: "12s"   },
+          { top: "32%",  size: 15, delay: "2.5s",  dur: "13s"   },
+          { top: "55%",  size: 24, delay: "5.0s",  dur: "11.5s" },
+          { top: "72%",  size: 17, delay: "1.8s",  dur: "12.5s" },
+          { top: "85%",  size: 22, delay: "7.2s",  dur: "12s"   },
+          { top: "45%",  size: 13, delay: "3.9s",  dur: "13.5s" },
+        ].map((p, i) => (
+          <div key={i} className="sakura-petal" style={{ top: p.top, animationDelay: p.delay, animationDuration: p.dur }}>
+            <svg width={p.size} height={p.size} viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,192,203,0.75)" transform="rotate(0 20 20)" />
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,182,193,0.65)" transform="rotate(72 20 20)" />
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,192,203,0.70)" transform="rotate(144 20 20)" />
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,175,185,0.65)" transform="rotate(216 20 20)" />
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,192,203,0.72)" transform="rotate(288 20 20)" />
+                <circle cx="20" cy="20" r="3" fill="rgba(255,220,230,0.9)" />
+              </g>
+            </svg>
+          </div>
+        ))}
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
           <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "'Oswald', sans-serif", color: "var(--viel-gold)" }}>
             Почему выбирают ВиЭль для поставок азиатского пива
           </h2>
