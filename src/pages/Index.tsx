@@ -521,6 +521,31 @@ export default function Index() {
           backgroundImage: "radial-gradient(circle at 1px 1px, rgba(212,160,23,0.8) 1px, transparent 0)",
           backgroundSize: "40px 40px"
         }} />
+
+        {/* Sakura petals */}
+        {[
+          { top: "12%",  size: 22, delay: "0s",    dur: "12s",  sway: "20px"  },
+          { top: "28%",  size: 16, delay: "2.1s",  dur: "13s",  sway: "-15px" },
+          { top: "50%",  size: 26, delay: "4.4s",  dur: "11.5s",sway: "25px"  },
+          { top: "68%",  size: 18, delay: "1.3s",  dur: "12.5s",sway: "-10px" },
+          { top: "80%",  size: 20, delay: "6.0s",  dur: "12s",  sway: "18px"  },
+          { top: "38%",  size: 14, delay: "8.2s",  dur: "13.5s",sway: "-22px" },
+          { top: "88%",  size: 24, delay: "3.7s",  dur: "11s",  sway: "12px"  },
+        ].map((p, i) => (
+          <div key={i} className="sakura-petal" style={{ top: p.top, animationDelay: p.delay, animationDuration: p.dur }}>
+            <svg width={p.size} height={p.size} viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <g transform="rotate(0 20 20)">
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,192,203,0.75)" transform="rotate(0 20 20)" />
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,182,193,0.65)" transform="rotate(72 20 20)" />
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,192,203,0.70)" transform="rotate(144 20 20)" />
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,175,185,0.65)" transform="rotate(216 20 20)" />
+                <ellipse cx="20" cy="12" rx="7" ry="12" fill="rgba(255,192,203,0.72)" transform="rotate(288 20 20)" />
+                <circle cx="20" cy="20" r="3" fill="rgba(255,220,230,0.9)" />
+              </g>
+            </svg>
+          </div>
+        ))}
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-16">
             <div className="mx-auto mb-6" style={{ width: "60px", height: "3px", background: "linear-gradient(90deg, transparent, var(--viel-gold), transparent)" }} />

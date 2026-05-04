@@ -233,6 +233,35 @@
   background: linear-gradient(90deg, var(--viel-gold), transparent);
 }
 
+/* ===== SAKURA PETALS ===== */
+@keyframes sakuraFall {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-110vw) translateY(60px) rotate(-380deg) scale(0.7);
+    opacity: 0;
+  }
+}
+
+.sakura-petal {
+  position: absolute;
+  right: -80px;
+  pointer-events: none;
+  animation: sakuraFall 12s linear infinite;
+}
+
+.sakura-petal svg {
+  filter: drop-shadow(0 0 4px rgba(255, 182, 193, 0.5));
+}
+
 /* ===== VIEL HERO BACKGROUND ANIMATION ===== */
 
 @keyframes heroDrift {
